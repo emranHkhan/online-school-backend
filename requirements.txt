@@ -1,0 +1,9 @@
+asgiref
+Django
+django-cors-headers
+django-environ
+django-filter
+djangorestframework
+Markdown
+sqlparse
+tzdata
