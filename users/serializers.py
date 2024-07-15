@@ -32,11 +32,11 @@ class UserSerializer(serializers.ModelSerializer):
             first_name=validated_data['first_name'],
             last_name=validated_data['last_name'],
             role=validated_data['role'],
-            image=validated_data['image']
+            image=validated_data.get('image')
         )
         
         user.set_password(validated_data['password'])
-        user.is_active = True 
+        user.is_active = False 
         user.save()
         return user
     
