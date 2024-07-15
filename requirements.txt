@@ -5,6 +5,5 @@ django-environ
 django-filter
 djangorestframework
 Markdown
-pillow
 sqlparse
 tzdata
