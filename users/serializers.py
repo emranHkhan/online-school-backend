@@ -32,7 +32,7 @@ class UserSerializer(serializers.ModelSerializer):
             first_name=validated_data['first_name'],
             last_name=validated_data['last_name'],
             role=validated_data['role'],
-            image=validated_data.get('image')
+            image=validated_data['image']
         )
         
         user.set_password(validated_data['password'])

@@ -2,8 +2,7 @@ from django.contrib import admin
 from django.http import HttpResponse
 from django.urls import get_resolver, path, include, reverse
 from django.utils.html import format_html
-from django.conf import settings
-from django.conf.urls.static import static
+
 
 url_descriptions = {
     'user-detail': 'Detail view of a specific user',
@@ -54,5 +53,3 @@ urlpatterns = [
     path('', list_urls, name='list_urls'),
 ]
 
-if settings.DEBUG:
-    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

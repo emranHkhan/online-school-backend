@@ -8,16 +8,16 @@ class User(AbstractUser):
         ('student', 'Student'),
     )
     role = models.CharField(max_length=7, choices=ROLE_CHOICES, blank=True, null=True)
-    image = models.ImageField(upload_to='user_images/', blank=True, null=True)  # Change URLField to ImageField
-    is_active = models.BooleanField(default=False)  # Default to False for new users
-    is_staff = models.BooleanField(default=False)   # Default to False for new users
+    image = models.URLField(blank=True, null=True)  
+    is_active = models.BooleanField(default=False)  
+    is_staff = models.BooleanField(default=False)   
 
     user_permissions = models.ManyToManyField(
         'auth.Permission',
         blank=True,
     )
 
-    objects = CustomUserManager()  # Use custom user manager
+    objects = CustomUserManager()  
 
     class Meta:
         app_label = 'users'
