@@ -160,4 +160,4 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 
-# CSRF_TRUSTED_ORIGINS = ['https://online-school-drf.onrender.com']
+CSRF_TRUSTED_ORIGINS = ['https://online-school-backend.onrender.com']
