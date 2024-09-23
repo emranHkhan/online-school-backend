@@ -29,7 +29,7 @@ SECRET_KEY = 'django-insecure-@#tfv-1wgg(b10paexx55=39k25tc3rk)tfz_jj0_l_#e%kw+o
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["*"]
+ALLOWED_HOSTS = ["127.0.0.1", ".vercel.app"]
 CORS_ORIGIN_ALLOW_ALL = True
 CORS_ALLOW_CREDENTIALS = True
 
@@ -94,7 +94,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'online_school_backend.wsgi.application'
+WSGI_APPLICATION = 'online_school_backend.wsgi.app'
 
 
 # Database
@@ -143,6 +143,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
 STATIC_URL = 'static/'
+STATIC_ROOT = BASE_DIR / 'staticfiles'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
@@ -157,4 +158,4 @@ EMAIL_HOST_USER=env('EMAIL_HOST_USER')
 EMAIL_HOST_PASSWORD=env('EMAIL_HOST_PASSWORD')
 
 
-CSRF_TRUSTED_ORIGINS = ['https://online-school-backend.onrender.com']
+# CSRF_TRUSTED_ORIGINS = ['https://online-school-backend.onrender.com']
