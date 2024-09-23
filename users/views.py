@@ -22,11 +22,8 @@ class UserDetail(generics.RetrieveUpdateDestroyAPIView):
     serializer_class = UserSerializer
 
 class TeacherList(generics.ListCreateAPIView):
-    queryset = User.objects.all()
+    queryset = User.objects.filter(role='teacher')
     serializer_class = UserSerializer
-
-    def get_queryset(self):
-        return User.objects.filter(role='teacher')
 
 class UserRegistrationView(APIView):
     serializer_class = UserSerializer
@@ -37,8 +34,8 @@ class UserRegistrationView(APIView):
             user = serializer.save() 
             token = default_token_generator.make_token(user)
             uid = urlsafe_base64_encode(force_bytes(user.pk))
-            # confirm_link = f"https://online-school-backend.onrender.com/api/active/{uid}/{token}"
-            confirm_link = f"http://127.0.0.1:8000/api/active/{uid}/{token}"
+            confirm_link = f"https://online-school-backend.onrender.com/api/active/{uid}/{token}"
+            # confirm_link = f"http://127.0.0.1:8000/api/active/{uid}/{token}"
             email_subject = "Confirm Your Email"
             email_body = render_to_string('confirm_email.html', {'confirm_link': confirm_link})
             email = EmailMultiAlternatives(email_subject, '', to=[user.email])
