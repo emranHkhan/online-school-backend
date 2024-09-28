@@ -28,12 +28,13 @@ SECRET_KEY = 'django-insecure-@#tfv-1wgg(b10paexx55=39k25tc3rk)tfz_jj0_l_#e%kw+o
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["*"]
+ALLOWED_HOSTS = ["127.0.0.1", ".vercel.app"]
 # CORS_ORIGIN_ALLOW_ALL = True
 CORS_ALLOW_CREDENTIALS = True
 
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:5173",
+    "https://sensational-cupcake-0251a3.netlify.app"
 ]
 
 # Application definition
