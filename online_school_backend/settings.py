@@ -11,7 +11,6 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 """
 
 from pathlib import Path
-import os
 import environ
 env = environ.Env()
 environ.Env.read_env()
@@ -29,7 +28,7 @@ SECRET_KEY = 'django-insecure-@#tfv-1wgg(b10paexx55=39k25tc3rk)tfz_jj0_l_#e%kw+o
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["127.0.0.1", ".vercel.app"]
+ALLOWED_HOSTS = ["*"]
 CORS_ORIGIN_ALLOW_ALL = True
 CORS_ALLOW_CREDENTIALS = True
 

@@ -34,7 +34,7 @@ class UserRegistrationView(APIView):
             user = serializer.save() 
             token = default_token_generator.make_token(user)
             uid = urlsafe_base64_encode(force_bytes(user.pk))
-            confirm_link = f"https://online-school-backend.onrender.com/api/active/{uid}/{token}"
+            confirm_link = f"https://online-school-backend-ga7o9604w-imrans-projects-9dacdabb.vercel.app/api/activate/{uid}/{token}"
             # confirm_link = f"http://127.0.0.1:8000/api/active/{uid}/{token}"
             email_subject = "Confirm Your Email"
             email_body = render_to_string('confirm_email.html', {'confirm_link': confirm_link})
