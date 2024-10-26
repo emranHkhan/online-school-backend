@@ -16,7 +16,7 @@ This API provides endpoints for managing an educational system, including user m
 
 ## Base URL
 ```
-https://ondelivery-backend.vercel.app/api/
+https://online-school-backend.vercel.app/api/
 ```
 
 ## Authentication
